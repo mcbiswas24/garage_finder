@@ -1,0 +1,57 @@
+{% extends 'authapp/auth_base.html' %}
+{% load static %}
+{% block content%}
+
+
+<div class="container">
+    <center><h2>Motorcycle Parts</h2></center><hr>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="#"><img src="{% static 'authapp/images/body_and_frame.jpg' %}" width= "200" height= "200"><br>
+            <span  style="font-size: 20px; color: black;">Body and frame</span></a>
+        </div>
+        <div class="col-sm-4">
+            <a href="#"><img src="{% static 'authapp/images/exhaust.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 20px; color: black">Exhaust</span></a>
+         </div>
+         <div class="col-sm-4">
+            <a href="#"><img src="{% static 'authapp/images/Battery.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 20px; color: black">Batteries</span></a>
+         </div>
+         <div class="col-sm-4">
+            <a href="#"><img src="{% static 'authapp/images/brake.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 20px; color: black">Brakes</span></a>
+         </div>
+         <div class="col-sm-4">
+            <a href="#"><img src="{% static 'authapp/images/hand_control.jpg' %}" width= "200" height= "200"> <br>
+             <span style="font-size: 20px; color: black">Hand Controls</span></a>
+         </div>
+         <div class="col-sm-4">
+            <a href="#"><img src="{% static 'authapp/images/light.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 20px; color: black">Hand Lightning</span></a>
+         </div>
+         <div class="col-sm-4">
+            <a href="{% url 'Engine_Parts' %}"><img src="{% static 'authapp/images/engine.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 20px; color: black">Engine</span></a>
+         </div>
+         <div class="col-sm-4">
+            <a href="#"><img src="{% static 'authapp/images/suspension.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 20px; color: black">Suspension</span></a>
+         </div>
+         <div class="col-sm-4">
+            <a href="#"><img src="{% static 'authapp/images/fuel_and_air.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 20px; color: black">Fuel and Air</span></a>
+         </div>
+         <div class="col-sm-4">
+            <a href="#"><img src="{% static 'authapp/images/drive_and_transmission.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 20px; color: black">Drive and Transmission</span></a>
+         </div>
+         
+    </div>
+</div><br><br><br>
+
+
+
+
+
+{% endblock %}

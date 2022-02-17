@@ -1,0 +1,61 @@
+{% extends 'authapp/auth_base.html' %}
+{% load static %}
+{% block content %}
+<div class="services">
+  <div class="container">
+    <h1><center>Our core Services </center></h1><br>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <center>
+          <img src= "{% static 'authapp/images/price.png'%}" width="500" height="300"><br><br><br>
+        </center>
+        <div class="center">
+          <h3>
+          Pocket-friendly prices
+          </h3>
+          Be rest assured, we will get you the best price for the service your vehicle needs.
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <center>
+          <img src= "{% static 'authapp/images/maintenance.png'%}" width="500" height="300"><br><br><br>
+        </center>
+        <div class="center">
+          <h3>
+            Maintenace Quality
+          </h3>
+          you choose your own garage provider and we assure you get to choose from the best ones.
+        </div>
+      </div>
+    </div>
+
+    <div class= "row">
+      <div class="col-md-6">
+        <center>
+          <img src= "{% static 'authapp/images/hassle-free.png'%}" width="500" height="300"><br><br><br>
+        </center>
+        <div class="center">
+          <h3>
+            Comfort
+          </h3>
+          Need a service for your ride, but dont wanna leave your couch.... dont worry we got hassle free service right at your doorstep
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <center>
+          <img src= "{% static 'authapp/images/warranty.png'%}" width="500" height="300"><br><br><br>
+        </center>
+        <div class="center">
+          <h3>
+            15-day Warranty
+          </h3>
+          Your bike will be covered with 15 day warranty on the service that it has received. If there is any other issue, then that is considered as a new service.
+        </div>
+      </div>
+    </div>
+ </div>
+</div><br>
+{% endblock %}

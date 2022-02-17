@@ -1,0 +1,347 @@
+{% extends 'providerapp/base_pro.html' %}
+{% load static %}
+{% block content %}
+
+<div class= "container" id="top">
+  <div class="row">
+    <div class="col" style="padding: 70px 30px 30px 30px;">
+      <p>
+      <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 50px; color: darkslategrey;text-shadow:   3px 0px grey;"> Welcome {{name}},</h2><br><br><br>
+       <p style="font-size: 17px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> Vehicle Maintenance System is a breakthrough for Vehicle Service & Maintenance. We take care of all your Vehicle service needs with secure and reliable facilities. 
+        It is a platform where you can choose services for the vehicle from the array of choices. 
+        we'll make sure you are never bored with the choices we have for you to offer and you'll always want to come back.
+        Yes, it’s a dream come true!
+      </p></p><br><br>
+      <form action="#request" method="GET">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-lg" style="border-radius: 12px; background-color: orangered; color: white;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;padding: 10px 40px 10px 40px;">Get Started</button>
+      </form>
+    </div>
+    <div class="col">
+      <img src="{% static 'authapp/images/hassle-free.png' %}" width="650" height="400">
+    </div>
+  </div><br><br><br><br><br><br><br>
+</div>
+
+  
+  <div class="container" style="background-color: gainsboro;padding: 20px  20px  20px 20px;">
+    <h1><center> Our Core Values </center></h1><br>
+    <hr>
+    <div class="feature">
+      <div class="container">
+        <div class="text-center">
+          <div class="row">
+            <div class="container">
+              <div class="col-md-3">
+                <div class="thumbnail">
+                  <h2 class="values" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: brown;">Reliability</h2>
+                    <p>You can rely on us for living up to your expectations, every single time because we connect to the emotions you have for your bike.</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="thumbnail">
+                  <h2 class="values" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color: brown;">Persistence</h2>
+                  <p>No matter what, we’ll keep trying and trying to achieve perfection because we know how important your bike is to you.</p>
+                </div>
+             </div>
+             <div class="col-md-3">
+              <div class="thumbnail">
+                <h2 class="values" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color: brown;">Consistency</h2>
+                <p>Day in, day out, we’ll stop at nothing other than being consistent in outcomes. After all, we all want our bikes to be as good as new, forever.</p>
+              </div>
+             </div>
+             <div class="col-md-3">
+              <div class="thumbnail">
+                <h2 class="values" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: brown;">Empathy</h2>
+                  <p>Every solution is a result of us feeling the love you have for your prized possession.</p>
+              </div>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div><br><br><br><br><br>
+
+
+
+<!--Add Garage Details-->
+<div class="services">
+  <div class="container" id="add_garage" style="padding-bottom: 65px;padding-top: 80px;">
+    <h1>Let us know your garage </h1><br>
+    <hr>
+    <div class="col-md-6">
+      <form enctype="multipart/form-data" action="{% url 'AddGarageDetails' %}" method="POST" >
+        {% csrf_token %}
+        <h3> Your garage details</h3>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Garage Name</label>
+          <input type="text" class="form-control" name="gname" placeholder="Enter grarage name">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Garage Adress</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder="Enter grarage address" name= "gaddress"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">City</label>
+          <input type="text" class="form-control" name="gcity" placeholder="Enter city">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Mobile Number</label>
+          <input type="text" class="form-control" name="gmobileno" placeholder="Enter your mobile number">
+        </div>
+        <div class="form-group">
+          <div class="float-right">
+            <label for="formGroupExampleInput2">Price for services (in range)</label><br>
+            <input type="text" class="form-control" name="general_service_price">
+            <input type="text" class="form-control" name="electrical_issue_price">
+            <input type="text" class="form-control" name="engine/silencer_noise_price">
+            <input type="text" class="form-control" name="repainting/scratch_removal_price">
+            <input type="text" class="form-control" name="oil_changing_price">
+            <input type="text" class="form-control" name="tyre_puncture/replacement_price">
+            <input type="text" class="form-control" name="chain_and_spocket_issue_price">
+          </div>  
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Select services you provide</label><br>
+          <input type="checkbox" name="general_service"> General Service<br><br>
+          <input type="checkbox" name="electrical_issue"> Electrical Issue<br><br>
+          <input type="checkbox" name="engine/silencer_noise"> Engine/silencer noise<br><br>
+          <input type="checkbox" name="repainting/scratch_removal">Repainting/Scratch removal<br><br>
+          <input type="checkbox" name="oil_changing"> Oil Changing<br><br>
+          <input type="checkbox" name="tyre_puncture/replacement"> Tyre Puncture/Replacement<br><br>
+          <input type="checkbox" name="chain_and_spocket_issue"> Chain and Spocket issue<br><br>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Upload your Garage image</label>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" name= "gimage">
+          <label class="custom-file-label" for="customFile" ></label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="background-color: black;">Add</button>
+      </form><br><br><br><br><br>
+      <button class="btn" style="border-radius: 30px;background-color: orangered;" onclick="document.location.href= '#top'"><i class='fas fa-arrow-up' style='font-size:48px;color: white'></i></button>
+    </div>
+
+    <div class="col-md-6">
+      <h2> Introduce your buisness to us....</h2>
+      <p style= "font-size: 15px">If you haven't yet then get started then what are you waiting for...<br>Who dosen't want their buisness to grow?? we know and we care for your buisness as much as you do.
+        So let the folks know your garage and let them avail the services you have to offer<br><br>
+
+        Just enter few details on the left and click....<br><br>
+
+      </p><br><br><br><br><br>
+    </div>
+  </div>
+</div><br><br><br><br><br><br>
+
+ <!--Services--> 
+ <div class="container" style="padding-bottom: 80px;padding-top: 80px;" id="request">
+  <h1>Your Requests </h1><br>
+  <hr>
+  <div class="col-md-6">
+    <table class="table table-borderless"> 
+      <tbody>
+        {% for request in requests %}
+        <tr >
+          <th>Username: </th>
+          <td>{{request.User_Name}}</td>
+        </tr>
+        <tr>
+          <th>City: </th>
+          <td>{{request.City}}</td>
+        </tr>
+        <tr>
+          <th>Vehicle ID: </th>
+          <td>{{request.Vehicle_ID}}</td>
+        </tr>
+        <tr>
+          <th>Urgency of the service: </th>
+          <td>{{request.Need}}</td>
+        </tr>
+        <tr>
+          <td>
+              <form action= "{% url 'Request_Handle'  req_id=request.id%}" method="POST">
+                  {% csrf_token%}
+                    <button type="submit" class="btn btn-dark btn-lg" name="accept">Accept</button>
+                    <button type="submit" class="btn btn-dark btn-lg" style="margin-left: 20px;" name="reject">Reject</button>
+                </form>
+          </td>
+        </tr> 
+      </tbody>
+      {% endfor %}
+    </table>
+   <button class="btn" style="border-radius: 30px;background-color: orangered;" onclick="document.location.href= '#top'"><i class='fas fa-arrow-up' style='font-size:48px;color: white;'></i></button>
+  </div>
+    
+
+  <div class="col-md-6">
+    <img src="{% static 'userapp/images/garage1.jpg' %}" class="img-responsive">
+  </div>
+</div><br><br><br><br><br><br><br><br>
+      <!--<div class="container" style="padding-bottom: 80px;padding-top: 80px;" id="request">
+        <h1>Your Requests </h1><br>
+        <hr>
+        <div class="col-md-6">
+          <table class="table"> 
+          <tbody>
+            {% for request in requests %}
+            <tr>
+              <th>Username: </th>
+              <td>{{request.User_Name}}</td>
+            </tr>
+            <tr>
+              <th>City: </th>
+              <td>{{request.City}}</td>
+            </tr>
+            <tr>
+              <th>Vehicle ID: </th>
+              <td>{{request.Vehicle_ID}}</td>
+            </tr>
+            <tr>
+              <th>Urgency of the service: </th>
+              <td>{{request.Need}}</td>
+            </tr>
+            <tr>
+              <td>
+                  <form action= "{% url 'Request_Handle'  req_id=request.id%}" method="POST">
+                      {% csrf_token%}
+                        <button type="submit" class="btn btn-dark btn-lg" name="accept">Accept</button>
+                        <button type="submit" class="btn btn-dark btn-lg" style="margin-left: 20px;" name="reject">Reject</button>
+                    </form>
+              </td>
+            </tr> 
+          </tbody>
+          {% endfor %}
+        </table>
+  
+        <div class="col-md-6">
+          <img src="{% static 'authapp/images/garage1.jpg' %}" class="img-responsive">
+        </div>
+      </div><br><br><br><br><br><br><br><br>-->
+  
+    <!--<div class="container" style="background-color: whitesmoke;padding: 15px 15px 15px 15px;" id= "add_vehicle">
+      <div class="col">
+      <form enctype="multipart/form-data" action="{% url 'AddVehicle' %}" method="POST" >
+        {% csrf_token %}
+        <br><br><br><h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color:darkolivegreen;font-size: 40px;text-shadow: 2px 0px darkslategrey">Add your vehicle</h3><hr><br><br>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Vehicle Name</label>
+          <input type="text" class="form-control" name="vname" placeholder="Enter vehicle name" style="background-color: gainsboro;">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Vehicle Model</label>
+          <input type="text" class="form-control" name="vmodel" placeholder="Enter vehicle model" style="background-color: gainsboro;">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Vehicle Type</label>
+          <input type="text" class="form-control" name="vtype" placeholder="Enter vehicle type" style="background-color: gainsboro;">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Vehicle Number</label>
+          <input type="text" class="form-control" name="vnumber" placeholder="Enter vehicle number" style="background-color: gainsboro;">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Vehicle Color</label>
+          <input type="text" class="form-control" name="vcolor" placeholder="Enter vehicle color" style="background-color: gainsboro;">
+        </div>
+        <div class="custom-file">
+          <label for="formGroupExampleInput2">Upload your vehicle image</label>
+          <input type="file" class="custom-file-input" name= "vimage">
+          <label class="custom-file-label" for="customFile" ></label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="background-color: black;">Add</button>
+      </form><br><br><br>
+      </div>
+    </div><br><br><br>-->
+    
+
+<!--Conatct-->
+    <br><br><br><div class="container" style="padding-bottom: 10px;padding-top: 80px;" id="contact">
+      <h1><center> Drop your Message </center></h1><br>
+      <hr>
+    </div>
+      <section id="contact-page">
+        <div class="container" style="padding: 40px;">
+          <div class="row">
+            <div class="col-md-6">
+              <img src= "{% static 'authapp/images/auth_contact.png' %}" width="600" height="400">
+            </div>
+            <div class="col-md-6">
+              <div class="center">
+                  <p style="font-size:22px">Let us know what you got to tell us</p>
+              </div>
+              
+              <form action="{% url 'UserQuery' %}" method="post" role="form" class="contactForm" style="padding: 30px;">
+                {% csrf_token %}
+                <div class="row" style="padding: 5px">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" style="background-color:gainsboro"/>
+                  <div class="validation"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" style="background-color:gainsboro"/>
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" style="padding: 5px">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" style="background-color:gainsboro"/>
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Write message in 50 characters"style="background-color:gainsboro"></textarea>
+                  <div class="validation"></div>
+                </div>
+                  <div class="form-group text-center">
+                  <button type="submit" class="btn btn-dark btn-lg btn-primary" style="border-radius: 12px">Submit Message</button>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+    <div class= "container" style="padding: 15px 15px 15px 15px;">
+      <div class="row">
+        <div class="col" style="background-color: blanchedalmond;padding: 15px 20px;margin-right: 15px;margin-left: 15px;border-radius: 15px;">
+          <div class= "col-sm-2">
+            <i class='fas fa-phone' style='font-size:30px'></i>
+          </div>
+          <div class= "col-sm-6">
+            <h4>Call Us Now</h4>
+            <span>+91 8 800 150 760</span>
+          </div>
+        </div>
+        
+        <div class="col" style="background-color: blanchedalmond;padding: 15px 15px 20px 15px;margin-right: 15px;margin-left: 15px;border-radius: 15px;">
+          <div class= "col-sm-2">
+            <i class='fas fa-envelope' style='font-size:30px'></i>
+          </div>
+          <div class= "col-md-5">
+            <h4>Mail Us Today</h4>
+            <span>team_vms@gmail.com</span>
+          </div>
+        </div>
+        
+        <div class="col" style="background-color: blanchedalmond;padding: 15px 15px 20px 15px;margin-right: 15px;margin-left: 15px;border-radius: 15px;">
+          <div class= "col-sm-2">
+            <i class='fas fa-home' style='font-size:30px'></i>
+          </div>
+          <div class= "col-md-6">
+            <h4>Our Location</h4>
+            <span>Ahemdabad, Gujarat</span>
+          </div>
+        </div>
+     </div><br><br><br><br>
+     <button class="btn" style="border-radius: 30px;background-color: orangered;" onclick="document.location.href= '#top'"><i class='fas fa-arrow-up' style='font-size:48px;color: white;'></i></button>  </div>    
+    </div> 
+  </section><br><br><br>
+{% endblock %}
+  

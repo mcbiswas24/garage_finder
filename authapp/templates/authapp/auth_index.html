@@ -1,0 +1,148 @@
+{% extends 'authapp/auth_base.html' %}
+{% load static %}
+{% block content %}
+
+<div class= "container">
+  <div class="row">
+    <div class="col" style="padding: 70px 30px 30px 30px;">
+      <p>
+      <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 50px; color: darkslategrey;text-shadow:   3px 0px grey;"> Welcome Folks,</h2><br><br><br>
+       <p style="font-size: 17px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> Vehicle Maintenance System is a breakthrough for Vehicle Service & Maintenance. We take care of all your Vehicle service needs with secure and reliable facilities. 
+        It is a platform where you can choose services for the vehicle from the array od choices. 
+        we'll make sure you are never bored with the choices we have for you to offer and you'll always want to come back.
+        Yes, it’s a dream come true!
+      </p></p><br><br>
+      <form action="{% url 'LoginPage' %}" method="GET">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-lg" style="border-radius: 12px; background-color: orangered; color: white;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;padding: 10px 40px 10px 40px;">Get Started</button>
+      </form>
+    </div>
+    <div class="col">
+      <img src="{% static 'authapp/images/hassle-free.png' %}" width="650" height="400">
+    </div>
+  </div><br><br><br><br><br><br><br>
+</div>
+
+<div class= "container">
+  <div class="row">
+    <div class="col" style="float: left;">
+      <img src="{% static 'authapp/images/auth_index.png' %}" width="650" height="400">
+    </div>
+    <div class="col" style="padding: 60px 10px 10px 10px;">
+      <p>
+      <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 30px; color: darkslategrey;text-shadow:   2px 0px grey;">An assurance that your bike is loved the way you love it</h2><br><br><br>
+       <p style="font-size: 17px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Vehicle Maintenance System is a service through which your vehicle is taken care of,
+         without you having to go through any hassle. We pride ourselves on fast, 
+         professional and affordable vehicle services with the best expertise.</p><br>
+        <p style="font-size: 17px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+          Every day, thousands of two-wheeler owners go through the same problem – 
+          either we don’t find the time or we are too busy with our day jobs to make time for our vehicle. 
+          In addition to this, we all have trust issues leaving our prized possessions in a random service station. 
+          We realize the need for a time-saving solution that can be trusted and that's how Vehicle Maintenance System was born.
+      </p></p><br><br>
+      <form action="{% url 'Auth_About' %}" method="GET">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-lg" style="border-radius: 12px; background-color: orangered; color: white;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;padding: 10px 40px 10px 40px;">Know More</button>
+      </form>
+    </div>
+    </div>
+  </div><br><br><br><br><br><br><br>
+</div>
+
+  <div class="container" style="background-color: gainsboro;padding: 20px  20px  20px 20px;">
+  <h1><center> Our Core Values </center></h1><br>
+  <hr>
+  <div class="feature">
+    <div class="container">
+      <div class="text-center">
+        <div class="row">
+          <div class="container">
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <h2 class="values" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: brown;">Reliability</h2>
+                  <p>You can rely on us for living up to your expectations, every single time because we connect to the emotions you have for your bike.</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <h2 class="values" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color: brown;">Persistence</h2>
+                <p>No matter what, we’ll keep trying and trying to achieve perfection because we know how important your bike is to you.</p>
+              </div>
+           </div>
+           <div class="col-md-3">
+            <div class="thumbnail">
+              <h2 class="values" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color: brown;">Consistency</h2>
+              <p>Day in, day out, we’ll stop at nothing other than being consistent in outcomes. After all, we all want our bikes to be as good as new, forever.</p>
+            </div>
+           </div>
+           <div class="col-md-3">
+            <div class="thumbnail">
+              <h2 class="values" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: brown;">Empathy</h2>
+                <p>Every solution is a result of us feeling the love you have for your prized possession.</p>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div><br><br><br><br><br>
+ <!--- <div class="about" style="background-color: white;">
+    <div class="container">
+      <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <h2>About us</h2>
+        <img src="{% static 'authapp/images/auth_about.jpg' %}" class="img-responsive" />
+        <p style= "font-size: 20px"> Come and join us to enjoy a hassle free service for your vehicle at your doorstep on every click
+        </p>
+      </div>
+
+      <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+        <h2>SOLUTION TO EVERY PROBLEM WITH A CLICK OF BUTTON....</h2>
+        <p style= "font-size: 15px"> Spending hours to find the right service? Waiting for yours turn to come? Concerned with high prices?</p><br><br>
+          <p style= "font-size: 15px">To all this problem our system is the one step solution.
+          </p><br><br>
+          <form action="{% url 'Auth_About' %}" method="GET">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-dark btn-lg btn-primary" style="border-radius: 12px">Know more</button>
+          </form>
+      </div>
+    </div>
+  </div><br><br><br><br>--->
+  <!---<section id="partner">
+    <div class="container">
+      <div class="center wow fadeInDown">
+        <h2>Our Partners</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+      </div>
+
+      <div class="partners">
+        <ul>
+          <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="{% static 'providerapp/images/partners/partner1.png' %}"></a></li>
+          <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="{% static 'providerapp/images/partners/partner2.png' %}"></a></li>
+          <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="{% static 'providerapp/images/partners/partner3.png' %}"></a></li>
+          <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="{% static 'providerapp/images/partners/partner4.png' %}"></a></li>
+          <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="{% static 'providerapp/images/partners/partner5.png' %}"></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>--->
+  <!--/#partner-->
+
+  <div class="container">
+    <div class="row" style="padding: 20px 20px 20px 20px;">
+      <div class="col">
+        <div class="col-sm-1">
+          <i class='far fa-edit' style='font-size:36px'></i>
+        </div>
+        <div class="col-md-3">
+          <h3>Have any questions? </h3>
+          <span  style="font-size: 12px">Feel free to share your thoughts or ask any query boogling your mind..</span>
+        </div>
+        <form action="{% url 'Auth_Contact' %}" method="GET">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-lg" style="border-radius: 12px; background-color: orangered; color: white;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;padding: 10px 40px 10px 40px;float: right;">Share</button>
+        </form>
+      </div>
+    </div>
+  </div><br><br><br><br>
+{% endblock %}

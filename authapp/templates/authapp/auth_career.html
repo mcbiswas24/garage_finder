@@ -1,0 +1,29 @@
+{% extends 'authapp/auth_base.html' %}
+{% load static %}
+{% block content %}  
+  <section id="portfolio">
+    <div class="container">
+      <h1><center> Join us </center></h1><br>
+      <hr>
+    </div>
+    <br><br><br><div class="container">
+      <div class="row">
+        <div class="col-md-6">
+            <br><br><br><img src="{% static 'authapp/images/career.jpg' %}" width="600" height="400"><br><br><br><br><br><br>
+        </div>
+        <div class="col-md-6">
+          <br><br><br><br><br><br><h2> Join our family and get into an exciting journey..  </h2><br><br><br>
+          <p style="font-size: 25px">We are always open for who would like to come into our family. If you wish to join us we will make sure
+            you will never want. Let's exapand and serve.
+          </p><br><br>
+          <form action="{% url 'Auth_Contact' %}" method="GET">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-dark btn-lg btn-primary" style="border-radius: 12px">Get in touch</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section><br><br><br>
+  <!--/#portfolio-item-->
+
+{% endblock %}

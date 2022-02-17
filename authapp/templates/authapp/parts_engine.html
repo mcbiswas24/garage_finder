@@ -1,0 +1,40 @@
+{% extends 'authapp/auth_base.html' %}
+{% load static %}
+{% block content%}
+
+
+<div class="container">
+    <center><h2>Motorcycle Engine Parts and Accessories</h2></center><hr>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="#"><img src="{% static 'authapp/images/Engine/engine_gasket.jpg' %}" width= "200" height= "200"><br>
+            <span style="font-size: 17px; color: black">Engine Gaskets</span></a>
+        </div>
+        <div class="col-sm-3">
+            <a href="#"><img src="{% static 'authapp/images/Engine/engine-bearings.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 17px; color: black">Engine Bearnigs</span></a>
+         </div>
+         <div class="col-sm-3">
+            <a href="{% url 'Camshaft_Details' %}"><img src="{% static 'authapp/images/Engine/engine-camshafts.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 17px; color: black">Camshafts</span></a>
+         </div>
+         <div class="col-sm-3">
+            <a href="#"><img src="{% static 'authapp/images/Engine/engine-connecting-rods.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 17px; color: black">Connecting Rods</span></a>
+         </div>
+         <div class="col-sm-3">
+            <a href="#"><img src="{% static 'authapp/images/Engine/engine-pistions.jpg' %}" width= "200" height= "200"> <br>
+             <span style="font-size: 17px; color: black">Pistions</span></a>
+         </div>
+         <div class="col-sm-3">
+            <a href="#"><img src="{% static 'authapp/images/Engine/engine-oil-filters.jpg' %}" width= "200" height= "200"><br>
+             <span style="font-size: 17px; color: black">Engine Oil filters</span></a>
+         </div>
+    </div>
+</div><br><br><br>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'authapp/auth_base.html' %}
+{% load static %}
+{% block content%}
+
+<div class="aboutus">
+  <div class="container">
+    <h3 style="color: black;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-shadow: 2px 0px teal;font-size: 25px;">What do you know about us </h3>
+    <hr>
+    <div class="col-md-7 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <img src="{% static 'authapp/images/auth_app_about.jpg' %}" class="img-responsive"><br><br>
+      <h2 style="color: maroon;text-shadow: 2px 0px darkgray;">CUSTOMER CONVENIENCY IS WHAT WE BELIEVE....</h2><br><br>
+      <p style="font-size: 15px;font-family: Arial, Helvetica, sans-serif;">Vehicle maintenance, it is a platform born out an immense desire to provide services to your vehicle being at any 
+        corner. we believe that vehicle care should be transparent, convinient, trustworthy and hassle free.</p>
+      <p style="font-size: 15px;font-family: Arial, Helvetica, sans-serif;">This platform provides cluster of cost effectuve yet customized and flawless solutions to automobile owners.</p>
+
+      <p style="font-size: 20px"> You being at anywhere, we promise you to give an array of services to your vehicle</p>
+    </div>
+    <div class="col-md-5 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" style="padding-left: 30px;">
+      <h2 style="color: maroon;text-shadow: 2px 0px darkgray;">SOLUTION TO EVERY PROBLEM WITH A CLICK OF BUTTON....</h2><br><br><br><br>
+      <p style= "font-size: 15px;font-family: Arial, Helvetica, sans-serif;"> Spending hours to find the right service? Waiting for yours turn to come? Concerned with high prices?</p><br><br>
+      <p style= "font-size: 15px;font-family: Arial, Helvetica, sans-serif;">To all this problem our system is the one step solution.
+      </p><br><br>
+      <!--<div class="skill">
+        <br><br><h2>To what level you can achieve</h2>
+        <p>Once you join us to get  your choice of service for your vehicle we make sure you get the most it.</p><br>
+
+        <div class="progress-wrap">
+          <h3>Trustworthy</h3>
+          <div class="progress">
+            <div class="progress-bar  color2" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+              <span class="bar-width">95%</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <h4>Conviniency</h4>
+          <div class="progress">
+            <div class="progress-bar color1" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+              <span class="bar-width">85%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <h4>Choices </h4>
+          <div class="progress">
+            <div class="progress-bar color3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+              <span class="bar-width">80%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <h4>Satisfaction</h4>
+          <div class="progress">
+            <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+              <span class="bar-width">90%</span>
+            </div>
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </div>
+</div>
+
+<div class="our-team">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{% static 'authapp/images/garage1.jpg' %}" width="400" height="338">
+      </div>
+      <div class="col-md-6">
+        <p style="font-size: 25px; color: slategray;">
+          Our unprecedented website is the only one to have a solution for a seamless,
+           professional vehicle-servicing experience. Once visit our site, 
+           you will have to register & login. Select service as per your need, 
+           choose service provider from the list and , choose payment method....relax not all you have to pay, just 10%
+           rest after the service is delivered to you.
+           Yes, it's that easy!!!
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

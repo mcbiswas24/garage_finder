@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Povider</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'authapp/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'authapp/css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <table class="table">
+                    {% for key in keys %}
+                    <tbody style="color: black;">
+                      <tr>
+                        <th scope="row">Garage Image:</th>
+                        <td><img src= "{{key.Gimage.url }}" alt="" class="rounded" height="100px" width="100px"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">provider Name:</th>
+                        <td>{{key.Provider_Name}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Garage Name:</th>
+                        <td>{{key.Gname}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Garage Adress:</th>
+                        <td>{{key.Gaddress}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Mobile No:</th>
+                        <td>{{key.Mobile_No}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">City:</th>
+                        <td>{{key.City}}</td>
+                      </tr> 
+                      <tr>
+                      <th scope="row">Services:</th>
+                      <th></th>
+                      <th scope="row">Prices:</th>
+                      </tr>
+                      </tr>
+                        {% if key.Ser1 != "" %}
+                        <tr>
+                          <td>
+                            {{key.Ser1}}         
+                          </td>
+                          <td></td>
+                          <td>
+                            {{key.Ser1_Price}}       
+                          </td>              
+                        </tr>
+                        {% endif %}
+                        {% if key.Ser2 != "" %}
+                        <tr>
+                          <td>
+                            {{key.Ser2}}         
+                          </td>
+                          <td></td>
+                          <td>
+                            {{key.Ser2_Price}}         
+                          </td>              
+                        </tr>
+                        {% endif %}
+                        {% if key.Ser3 != "" %}
+                        <tr>
+                          <td>
+                            {{key.Ser3}}         
+                          </td>
+                          <td></td>
+                          <td>
+                            {{key.Ser3_Price}}         
+                          </td>              
+                        </tr>
+                        {% endif %}
+                        {% if key.Ser4 != "" %}
+                        <tr>
+                          <td>
+                            {{key.Ser4}}         
+                          </td>
+                          <td></td>
+                          <td>
+                            {{key.Ser4_Price}}         
+                          </td>              
+                        </tr>
+                        {% endif %}
+                        {% if key.Ser5 != "" %}
+                        <tr>
+                          <td>
+                            {{key.Ser5}}         
+                          </td>
+                          <td></td>
+                          <td>
+                            {{key.Ser5_Price}}         
+                          </td>              
+                        </tr>
+                        {% endif %}
+                        {% if key.Ser6 != "" %}
+                        <tr>
+                          <td>
+                            {{key.Ser6}}         
+                          </td>
+                          <td></td>
+                          <td>
+                            {{key.Ser6_Price}}         
+                          </td>              
+                        </tr>
+                        {% endif %}
+                        {% if key.Ser7 != "" %}
+                        <tr>
+                          <td>
+                            {{key.Ser7}}         
+                          </td>
+                          <td></td>
+                          <td>
+                            {{key.Ser7_Price}}         
+                          </td>              
+                        </tr>
+                        {% endif %}
+                        
+                      <tr>
+                        <td>
+                            <form action= "{% url 'Request_Details_Fill' sp_id=key.SP_ID_id %}" method="POST">
+                                {% csrf_token%}
+                                <button type="submit" class="btn btn-primary" style="background-color: black;">Request</button>
+                              </form>
+                        </td>
+                      </tr> 
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                       
+                        
+                        
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'authapp/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'authapp/js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

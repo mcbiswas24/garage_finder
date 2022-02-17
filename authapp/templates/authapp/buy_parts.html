@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'authapp/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'authapp/css/style1.css' %}">
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container" style="padding-left: 30px;">
+                <div class="signup-content">
+                    <div class="signup-form">
+                       <center><div class="container">
+                            <center><h2>Choose your ride</h2></center><br><br>
+                            <form action="{% url 'FindParts' %}" methods= "GET">
+                                {% csrf_token %}
+                              <select class="mdb-select md-form custom-select-md " style="padding: 10px 10px 10px 10px;border-radius: 8px; background-color: gainsboro;" name= "bike_name">
+                                <option value="" disabled selected>Please select Bike          </option>
+                                <option value="Honda">Honda</option>
+                                <option value="Yamaha">Yamaha</option>
+                                <option value="Kawasaki">Kawasaki</option>
+                                <option value="Polaris">Polaris</option>
+                                <option value="Suzuki">Suzuki</option>
+                                <option value="KTM">KTM</option>
+                              </select><br><br><br>
+
+                            <select class="mdb-select md-form"  name="model" style="padding: 10px 10px 10px 10px;border-radius: 8px;background-color: gainsboro;">
+                                <option value="None">Please select Model</option>
+                                <option value="CRF 150R" >CRF 150R</option>
+                                <option value="CRF 250R">CRF 250R</option>
+                                <option value="CRF 450R">CRF 450R</option>
+                                <option value="CRF 250X">CRF 250X</option>
+                                <option value="RAPTOR 350">RAPTOR 350</option>
+                                <option value="RAPTOR 750R">RAPTOR 750R</option>
+                                <option value="KFX 450R">KFX 450R</option>
+                                <option value="KX 250F">KX 250F</option>
+                                <option value="KX 450F">KX 450F</option>
+                                <option value="RANGER 400">RANGER 400</option>
+                                <option value="RANGER XP 900">RANGER XP 900</option>
+                                <option value="RM-Z 250">RM-Z 250 </option>
+                                <option value="RM-Z 450">RM-Z 450 </option>
+                                <option value="SX 350 F">SX 350 F </option>
+        
+                            </select><br><br><br>
+                            
+                                <div class="form-group form-button">
+                                  <input type="submit" name="signin" id="signin" class="form-submit" value="Find Parts" style="background-color: black;size: 10px;"/>
+                              </div><br><br>
+                              <p style="color: black;font-size: 20px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{message}}</p>
+                              
+                              <br><br><br><br>
+                            </form>  
+                        </div></center> <br><br><br><br><br><br>
+                            <div class="container">
+                                <br><br><br><br><h2> Your Selection </h2><br><br><br>
+                                <form action="{% url 'Payment' %}" method="GET">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <th>Your Ride:</th>
+                                        <td>{{parts_details.Bike_Name}} {{parts_details.Bike_Model}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Price:</th>
+                                        <td>{{parts_details.Price}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Availability:</th>
+                                        <td>{{parts_details.Availibility}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div class="form-group form-button">
+                                            <input type="submit" name="signin" id="signin" class="form-submit" value="Proceed to Pay" style="background-color: black;size: 10px;"/>
+                                        </div><br><br><br><br>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table> 
+                                </form>
+                            </div>
+                        </div></center>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'authapp/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'authapp/js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+

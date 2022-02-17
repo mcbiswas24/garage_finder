@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vehicle Maintenance System</title>
+
+  <!-- Bootstrap -->
+  <link href="{% static 'userapp/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'userapp/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'userapp/css/animate.css' %}">
+  <link href="{% static 'userapp/css/prettyPhoto.css' %}" rel="stylesheet">
+  <link href="{% static 'userapp/css/style.css' %}" rel="stylesheet" />
+   <!-- Bootstrap -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="main">
+
+       <!-- Sign up form -->
+       <div class="services">
+        <div class="container">
+            <h2 class="form-title">Request Details</h2>
+            {% if message %}
+            <p class="text-danger text-center">{{message}}</p>
+            {% endif %}
+            <p class="text"> Fill details needed to proceed request</p><br><br>
+            <form method="POST" action= "{% url 'Store_Request' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Vehicle ID</label>
+                    <input type="text" class="form-control" name="vno" placeholder="Enter vehicle no">
+                  </div>
+                <div class="form-group">
+                    <label>City</label><br><br>
+                    <input type="text" class="form-control" name="city" placeholder="Enter city">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Tell us how quickly you need service</label><br>
+                    <input type="checkbox" name="urgent"> Urgent<br><br>
+                    <input type="checkbox" name="wait"> Can wait<br><br>
+                  </div>
+               
+                <div class="form-group form-button">
+                    <button type="submit" class="btn btn-dark  btn-lg">Submit</button>
+                </div>
+                <div class="signup-image">
+                    <a href="{% url 'IndexPage' %}" class="signup-image-link">Get back</a>
+                </div>
+            </form>
+          
+      </div>
+    </div>    
+      
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'authapp/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'authapp/js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

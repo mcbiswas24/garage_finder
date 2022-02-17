@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'authapp/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'authapp/css/style1.css' %}">
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                      <table class="table">
+                        {% for part in parts %}
+                        <tbody>
+                          <tr>
+                            <td><img src= "{{part.Part_Image.url }}" alt="" class="rounded" height="100px" width="100px"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Part:</th>
+                            <td>{{part.Sub_Part}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Name:</th>
+                            <td>{{part.Name}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Brand: </th>
+                            <td>{{part.Brand}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Price:</th>
+                            <td>{{part.Price}}</td>
+                          </tr>
+                           <tr>
+                            <th scope="row">Fitment:</th>
+                            <td>{{part.Fitment}}</td>
+                          </tr>
+                          <tr>
+                            <td><form action="{% url 'BuyParts' %}">
+                              <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Buy" style="background-color: black;size: 10px;"/>
+                            </div><br><br><br><br>
+                            </form></td>
+                          </tr>
+                         {% endfor %}
+                       </tbody>
+                      </table>     
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'authapp/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'authapp/js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
